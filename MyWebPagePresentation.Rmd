@@ -1,0 +1,22 @@
+---
+title: "My Web Page Presentation"
+author: "Shinya Hashimoto"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+output: 
+  html_document:
+    toc: true
+    df_print: paged
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(plotly)
+```
+
+```{r plotlyExample, echo=FALSE, warning=FALSE}
+# Create a simple plotly graph
+fig <- plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length, type = 'scatter', mode = 'markers',color = ~Species, colors = 'Set1') 
+# Display the plot
+fig
+```
